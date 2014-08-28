@@ -2,7 +2,7 @@
 
 today=$(date +"%Y%m%d")
 
-git filter-branch -f --tree-filter 'rm -rf output/sabotage-stage0*' --prune-empty sabotage-stage0
+git filter-branch -f --tree-filter 'rm -rf output/sabotage-stage0*' --prune-empty master
 
 docker run -v $(pwd)/output:/output -v $(pwd)/script:/opt/mkimage jprjr/arch /opt/mkimage/mkimage-sabotage.sh $today
 
