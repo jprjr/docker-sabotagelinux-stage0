@@ -14,5 +14,7 @@ sed -i 's/^export A=i386/#export A=i386/' config
 sed -i 's/^#export A=x86_64/export A=x86_64/' config
 
 ./build-stage 0
+rm -rf /tmp/sabotage/src/build/*
+rm -rf /tmp/sabotage/src/tarballs/*
 
 tar --xz -f /output/sabotage-stage0-$today.tar.xz --numeric-owner -C /tmp/sabotage -c .
